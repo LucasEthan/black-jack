@@ -31,7 +31,6 @@ class Card
     red: :red,
   }.freeze
 
-
   def initialize(suit, rank, revealed = false)
     @suit = suit
     @rank = rank
@@ -45,7 +44,7 @@ class Card
       COLORS[:black]
     end
   end
-  
+
   def revealed?
     revealed
   end
@@ -59,10 +58,6 @@ class Card
   end
 
   def toggle_reveal
-    if revealed?
-      unreveal
-    else
-      reveal
-    end
+    self.reveal = !revealed?
   end
 end
