@@ -4,8 +4,8 @@ class Card
 
   # Card Suits
   SUITS = {
-    spade: :spade,
     club: :club,
+    spade: :spade,
     heart: :heart,
     diamond: :diamond,
   }.freeze
