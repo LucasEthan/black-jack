@@ -18,13 +18,15 @@ class Deck
   end
 
   def number_of_cards
-    @cards.length
+    cards.length
   end
 
   def draw
+    cards.shift
   end
 
   def peek
+    cards.index.first
   end
 
   def split
