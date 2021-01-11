@@ -18,6 +18,7 @@ class Deck
   end
 
   def number_of_cards
+    @cards.length
   end
 
   def draw
