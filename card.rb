@@ -26,15 +26,35 @@ class Card
     jack: :jack,
   }.freeze
 
+  VALUES = {
+    ace: 1,
+    two: 2,
+    three: 3,
+    four: 4,
+    five: 5,
+    six: 6,
+    seven: 7,
+    eight: 8,
+    nine: 9,
+    ten: 10,
+    king: 10,
+    queen: 10,
+    jack: 10,
+  }.freeze
+
   COLORS = {
     black: :black,
     red: :red,
   }.freeze
 
-  def initialize(suit, rank, revealed = false)
-    @suit = suit
+  def initialize(rank, suit, revealed = false)
     @rank = rank
+    @suit = suit
     @revealed = revealed
+  end
+
+  def value
+    VALUES[rank]
   end
 
   def color

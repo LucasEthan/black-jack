@@ -21,15 +21,17 @@ class Deck
     cards.length
   end
 
-  def draw
-    cards.shift
+  def draw(number_of_cards = 1)
+    cards.pop(number_of_cards)
   end
 
-  def peek
-    cards.index.first
+  def peek(number_of_cards = 1)
+    cards.last(number_of_cards)
   end
 
   def split
+    shuffle_cards
+    cards.pop(cards.length / 2)
   end
 
   def add_cards_to_top
