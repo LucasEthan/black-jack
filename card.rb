@@ -4,26 +4,26 @@ class Card
 
   # Card Suits
   SUITS = {
-    club: :club,
-    spade: :spade,
-    heart: :heart,
-    diamond: :diamond,
+    club: "\u2663",
+    spade: "\u2660",
+    heart: "\u2665",
+    diamond: "\u2666",
   }.freeze
 
   RANKS = {
-    ace: :ace,
-    two: :two,
-    three: :three,
-    four: :four,
-    five: :five,
-    six: :six,
-    seven: :seven,
-    eight: :eight,
-    nine: :nine,
-    ten: :ten,
-    king: :king,
-    queen: :queen,
-    jack: :jack,
+    ace: "A",
+    two: "2",
+    three: "3",
+    four: "4",
+    five: "5",
+    six: "6",
+    seven: "7",
+    eight: "8",
+    nine: "9",
+    ten: "10",
+    king: "K",
+    queen: "Q",
+    jack: "J",
   }.freeze
 
   VALUES = {
@@ -79,5 +79,13 @@ class Card
 
   def toggle_reveal
     self.reveal = !revealed?
+  end
+
+  def print
+    if revealed?
+      puts RANKS[rank] + SUITS[suit]
+    else
+      puts "??"
+    end
   end
 end
